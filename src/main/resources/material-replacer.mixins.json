@@ -1,0 +1,13 @@
+{
+	"required": true,
+	"package": "material_replacer.zz_404.mixin",
+	"compatibilityLevel": "JAVA_21",
+	"mixins": [
+	],
+	"injectors": {
+		"defaultRequire": 1
+	},
+	"overwrites": {
+		"requireAnnotations": true
+	}
+}
