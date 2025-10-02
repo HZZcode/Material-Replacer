@@ -31,10 +31,16 @@ public class ReplaceMaterialCommand {
             = new SimpleCommandExceptionType(Text.translatable("commands.fill.failed"));
 
     public static void register() {
+        register("replace-material");
+        register("rem");
+    }
+
+    public static void register(String name) {
         CommandRegistrationCallback.EVENT.register(
                 (dispatcher,
                  registryAccess,
-                 environment) -> dispatcher.register(literal("rem")
+                 environment) -> dispatcher.register(literal(name)
+                        .requires(source -> source.hasPermissionLevel(2))
                         .then(argument("pos1", BlockPosArgumentType.blockPos())
                                 .then(argument("pos2", BlockPosArgumentType.blockPos())
                                         .then(argument("from", StringArgumentType.string())
